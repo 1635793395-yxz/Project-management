@@ -139,7 +139,7 @@
         <el-form-item v-if="dialogMode === 'APPLY'" label="项目材料">
            <el-upload
              class="upload-demo"
-             action="uploadActionUrl"
+             :action="uploadActionUrl"
              :with-credentials="true"
              :limit="1"
              :on-success="handleMaterialSuccess"
