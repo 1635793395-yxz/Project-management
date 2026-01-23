@@ -139,7 +139,8 @@
         <el-form-item v-if="dialogMode === 'APPLY'" label="项目材料">
            <el-upload
              class="upload-demo"
-             action="/api/files/upload"
+             action="uploadActionUrl"
+             :with-credentials="true"
              :limit="1"
              :on-success="handleMaterialSuccess"
              :on-error="handleMaterialError"
@@ -205,6 +206,9 @@ const materialFileList = ref([])
 
 const searchInput = ref('')
 const activeSearchQuery = ref('')
+
+const BACKEND_URL = 'https://projectmanagement-backend-mkwx.onrender.com'
+const uploadActionUrl = `${BACKEND_URL}/api/files/upload`
 
 const filteredProjectList = computed(() => {
   const q = activeSearchQuery.value.toLowerCase().trim()
