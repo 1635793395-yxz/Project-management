@@ -94,7 +94,7 @@ const handleRegister = async () => {
   try {
     // 发送请求时带上 regType
     const payload = { ...form.value, regType: regType.value }
-    const response = await axios.post('/api/auth/register', payload)
+    const response = await axios.post(`${BACKEND_URL}/api/auth/register`, payload, { withCredentials: true })
     
     if (response.data.code === 200) {
       if (regType.value === 'MANAGER') {
