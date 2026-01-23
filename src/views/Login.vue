@@ -61,7 +61,7 @@ const handleLogin = async () => {
 
   try {
     // 登录时把验证码也发给后端
-    const res = await axios.post(`${BACKEND_URL}/api/auth/register`, payload, { withCredentials: true })
+    const res = await axios.post(`${BACKEND_URL}/api/auth/login`, form.value, { withCredentials: true })
     
     if (res.data.code === 200) {
       ElMessage.success('登录成功！')
