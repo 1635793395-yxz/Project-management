@@ -69,10 +69,12 @@ const form = ref({
   captcha: '' 
 })
 
+const BACKEND_URL = 'https://projectmanagement-backend-mkwx.onrender.com'
+
 const captchaUrl = ref('')
 
 const refreshCaptcha = () => {
-  captchaUrl.value = '/api/auth/captcha?t=' + new Date().getTime()
+  captchaUrl.value = `${BACKEND_URL}/api/auth/captcha?t=` + new Date().getTime()
 }
 
 const handleRegister = async () => {
